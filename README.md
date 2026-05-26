@@ -1,54 +1,62 @@
-# Sistema Bancario em Python
+# 🏦 Sistema Bancário — Exercitando POO
 
-Sistema bancario orientado a objetos desenvolvido em Python, com suporte a clientes, contas correntes e operacoes financeiras basicas via terminal.
+Sistema bancário orientado a objetos desenvolvido em Python, com suporte a clientes, contas correntes e operações financeiras básicas via terminal.
 
-## Funcionalidades
+---
 
-- Cadastro de clientes com nome, CPF, data de nascimento e endereco
-- Criacao de contas correntes vinculadas a clientes
-- Deposito em conta
-- Saque com limite por operacao
-- Extrato com historico de transacoes e saldo atual
-- Listagem de contas cadastradas
+## 📋 Funcionalidades
 
-## Estrutura do Projeto
+- **Cadastro de clientes** com nome, CPF, data de nascimento e endereço
+- **Criação de contas correntes** vinculadas a clientes
+- **Depósito** em conta
+- **Saque** com limite por operação
+- **Extrato** com histórico de transações e saldo atual
+- **Listagem de contas** cadastradas
+
+---
+
+## 🗂️ Estrutura do Projeto
 
 ```text
 Projeto-Sistema-Bancario/
-|- sistema_bancario.py
-|- README.md
-`- template/
-   `- 2.py
+├── sistema_bancario.py
+├── README.md
+└── template/
+    └── 2.py
 ```
 
-## Arquitetura
+---
 
-O projeto utiliza Programacao Orientada a Objetos com os seguintes componentes:
+## 🧱 Arquitetura
 
-| Classe | Descricao |
+O projeto utiliza **Programação Orientada a Objetos** com os seguintes componentes:
+
+| Classe | Descrição |
 | --- | --- |
-| `Cliente` | Classe base para clientes, com endereco e lista de contas |
+| `Cliente` | Classe base para clientes, com endereço e lista de contas |
 | `PessoaFisica` | Herda de `Cliente` e adiciona nome, CPF e data de nascimento |
-| `Conta` | Classe base para contas bancarias, com saldo, numero, agencia e historico |
-| `ContaCorrente` | Herda de `Conta` e aplica limite de saque e limite de quantidade de saques |
-| `Historico` | Registra as transacoes realizadas |
-| `Transacao` | Classe abstrata que define o contrato das operacoes financeiras |
-| `Saque` | Implementa a operacao de saque |
-| `Deposito` | Implementa a operacao de deposito |
+| `Conta` | Classe base para contas bancárias, com saldo, número, agência e histórico |
+| `ContaCorrente` | Herda de `Conta` e aplica limite de saque (R$ 500,00) e limite de quantidade de saques (3) |
+| `Historico` | Registra as transações realizadas com tipo, valor e data/hora |
+| `Transacao` | Classe abstrata que define o contrato das operações financeiras |
+| `Saque` | Implementa a operação de saque |
+| `Deposito` | Implementa a operação de depósito |
 
-## Como Executar
+---
 
-### Pre-requisitos
+## ▶️ Como Executar
+
+### Pré-requisitos
 
 - Python 3.8 ou superior
 
-### Execucao
+### Execução
 
 ```bash
 python sistema_bancario.py
 ```
 
-O menu exibido no terminal possui as opcoes:
+O menu exibido no terminal possui as opções:
 
 ```text
 ================ MENU ================
@@ -57,36 +65,44 @@ O menu exibido no terminal possui as opcoes:
 [e]  Extrato
 [nc] Nova conta
 [lc] Listar contas
-[nu] Novo usuario
+[nu] Novo usuário
 [q]  Sair
 ```
 
-## Exemplo de Uso
+---
 
-1. Crie um usuario com a opcao `nu`.
-2. Crie uma conta com a opcao `nc`.
-3. Realize um deposito com a opcao `d`.
-4. Realize um saque com a opcao `s`.
-5. Consulte o extrato com a opcao `e`.
+## 💡 Exemplo de Uso
 
-## Regras de Negocio
+1. Crie um usuário com a opção `nu`.
+2. Crie uma conta com a opção `nc`.
+3. Realize um depósito com a opção `d`.
+4. Realize um saque com a opção `s`.
+5. Consulte o extrato com a opção `e`.
 
-- Nao e possivel sacar valor superior ao saldo disponivel
-- O valor maximo por saque e de R$ 500,00
-- Sao permitidos no maximo 3 saques
-- Depositos e saques com valor menor ou igual a zero sao rejeitados
-- Nao e possivel cadastrar dois clientes com o mesmo CPF
+---
 
-## Tecnologias Utilizadas
+## ⚠️ Regras de Negócio
 
-- Python 3
-- `abc`
-- `datetime`
-- `textwrap`
-- `os`
+- Não é possível sacar valor superior ao saldo disponível
+- O valor máximo por saque é de **R$ 500,00**
+- São permitidos no máximo **3 saques**
+- Depósitos e saques com valor menor ou igual a zero são rejeitados
+- Não é possível cadastrar dois clientes com o mesmo CPF
 
-## Observacoes
+---
 
-- O sistema mantem os dados apenas em memoria
-- O arquivo `template/2.py` foi usado como referencia do curso
-- Atualmente a recuperacao de conta usa a primeira conta do cliente
+## 🛠️ Tecnologias Utilizadas
+
+- **Python 3**
+- `abc` — classes abstratas
+- `datetime` — registro de data/hora nas transações
+- `textwrap` — formatação do menu
+- `os` — limpeza do terminal
+
+---
+
+## 📌 Observações
+
+- O sistema mantém os dados **apenas em memória** (sem persistência em banco de dados ou arquivo)
+- O arquivo `template/2.py` foi usado como referência do curso
+- Atualmente a recuperação de conta usa a primeira conta do cliente
