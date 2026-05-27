@@ -198,9 +198,17 @@ def recuperar_conta_cliente(cliente):
     if not cliente.contas:
         print("\n@@@ Cliente não possui conta! @@@")
         return
+    print("\nQual conta deseja usar? ")
+    for indice,conta in enumerate(cliente.contas,start=1):
+        print(f"{indice}- {conta}\n")
 
-    # FIXME: não permite cliente escolher a conta
-    return cliente.contas[0]
+    indice = int(input("Qual conta deseja escolher?\n"))
+    if indice < 1 or indice > len(cliente.contas):
+        print("\n@@@ Conta inválida! @@@")
+        return
+
+    
+    return cliente.contas[indice-1]
 
 
 def depositar(clientes):
